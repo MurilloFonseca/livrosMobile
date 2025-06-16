@@ -1,11 +1,10 @@
+import { ReactElement } from 'react';
 import { StyleSheet, SafeAreaView, Text } from 'react-native';
 
-export default function Paragraph({ text }: { text: string }) {
+export default function Paragraph({ content }: { content: ReactElement }) {
   return (
     <SafeAreaView>
-      <Text>
-        {text}
-      </Text>
+      {content}
     </SafeAreaView>
   );
 }
