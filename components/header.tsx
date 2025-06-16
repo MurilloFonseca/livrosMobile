@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export default function Header({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.header}>
       <TouchableOpacity onPress={() => navigation.navigate('main')}>
         <Text>&lt;-</Text>
       </TouchableOpacity>
@@ -17,5 +17,10 @@ export default function Header({navigation}: {navigation: NativeStackNavigationP
 }
 
 const styles = StyleSheet.create({
-
+  header: {
+    display: 'flex', 
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  }
 });
