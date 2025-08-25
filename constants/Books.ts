@@ -2,7 +2,7 @@ import { Book } from "./Types";
 
 const iliada: Book = { 
     pagesTotal: '1000', 
-    nome: "ilíada", 
+    nome: "Ilíada", 
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus finibus ligula, vel cursus nisi. Vestibulum mattis nec turpis et porta. Nullam sit amet diam a nisi sodales viverra. Ut non ante lobortis, feugiat leo porta, blandit magna. Donec ultrices quis felis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus interdum facilisis faucibus. Cras vel scelerisque velit. In pellentesque orci eu ipsum vulputate finibus vel at dolor. Pellentesque suscipit molestie efficitur. Maecenas volutpat diam quis massa aliquet, non tincidunt nibh tristique. Suspendisse ac nisl consectetur, congue urna ac, porttitor dui.", 
     autor: "Homero", 
     ano: "séc. VIII a.C.", 

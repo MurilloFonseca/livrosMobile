@@ -2,6 +2,7 @@ import { Book } from '@/constants/Types';
 import { StyleSheet, SafeAreaView, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Paragraph from './paragraph';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from 'react';
 
 export default function LivroLido({ livro, navigation }: { navigation: NativeStackNavigationProp<any, any>, livro: Book }) {
   

@@ -3,6 +3,7 @@ import Paragraph from './paragraph';
 import { useState } from 'react';
 import { Book } from '@/constants/Types';
 import { readBooks } from '@/constants/ReadBooks';
+import React from 'react';
 
 export default function LivroComponente({ livro }: { livro: Book }) {
 

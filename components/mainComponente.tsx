@@ -5,12 +5,13 @@ import { profilePicture } from '@/constants/Images';
 import LivroLido from './livroLido';
 import { readBooks } from '@/constants/ReadBooks';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from 'react';
 
 export default function MainComponente({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
   return (
     <SafeAreaView style={styles.infoContainer}>
       <View style={styles.mainHeader}>
-        <Text>&lt;Nome&gt;</Text>
+        <Text style={styles.title}>&lt;NAME&gt;</Text>
         <SearchBar navigation={navigation}/>
         <UserPicture src={profilePicture} />
       </View>
@@ -21,6 +22,9 @@ export default function MainComponente({navigation}: {navigation: NativeStackNav
 }
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 30,
+  },
   card: {
     backgroundColor: '#fff',
     borderRadius: 12,
@@ -42,7 +46,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: 50,
   },
   imageContainer: {
     alignItems: 'center',
@@ -80,6 +85,8 @@ const styles = StyleSheet.create({
   livroAutor: {
     fontSize: 16,
     color: '#555',
+    paddingBottom: 20,
+    paddingLeft: 20,
   },
   livroAno: {
     fontSize: 16,

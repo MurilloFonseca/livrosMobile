@@ -3,6 +3,7 @@ import Header from '@/components/header';
 import { Book } from '@/constants/Types';
 import LivroLido from '@/components/livroLido';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React from 'react';
 
 export default function SearchTab({ route, navigation }: { navigation: NativeStackNavigationProp<any, any>, route: {params: {livros: Book[]}} }) {
   const {livros} = route.params

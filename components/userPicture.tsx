@@ -1,4 +1,5 @@
 import { StyleSheet, SafeAreaView, Image } from 'react-native';
+import React from 'react';
 
 export default function UserPicture({src}: {src: string}) {
   return (

@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
+import React from 'react';
 
 export default function Paragraph({ content }: { content: ReactElement }) {
   return (

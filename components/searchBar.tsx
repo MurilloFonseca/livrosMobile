@@ -2,6 +2,7 @@ import { books } from '@/constants/Books';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useState } from 'react';
 import { StyleSheet, SafeAreaView, TextInput, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
 
 export default function SearchBar({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
   const [search, setSearch] = useState('')
@@ -10,7 +11,7 @@ export default function SearchBar({navigation}: {navigation: NativeStackNavigati
     for(let book of books){
       if(book.nome === search){
         navigation.navigate('searchResults', {livros: [book]})
-        break;
+        return;
       }
     }
     navigation.navigate('searchResults')

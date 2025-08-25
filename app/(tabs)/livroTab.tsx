@@ -3,6 +3,7 @@ import LivroComponente from '../../components/livroComponente'
 import Header from '@/components/header';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Book } from '@/constants/Types';
+import React from 'react';
 
 export default function LivroTab({route, navigation}: {navigation: NativeStackNavigationProp<any, any>, route: {params: {livro: Book}}}) {
   
