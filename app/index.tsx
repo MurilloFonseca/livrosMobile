@@ -5,13 +5,7 @@ import SearchTab from './(tabs)/searchTab';
 import { books } from '@/constants/Books';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Book } from '@/constants/Types';
-
-type StackParams = {
-  main: undefined;
-  book: {livro: Book};
-  searchResults: {livros: Book[]};
-}
+import { StackParams } from '@/constants/Types';
 
 export default function HomeScreen() {
   const Stack = createNativeStackNavigator<StackParams>();

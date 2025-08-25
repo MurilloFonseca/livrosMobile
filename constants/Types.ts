@@ -7,3 +7,9 @@ export type Book = {
     pagesTotal: string,
     pagesRead?: string
 }
+
+export type StackParams = {
+  main: undefined;
+  book: {livro: Book};
+  searchResults: {livros: Book[]};
+}

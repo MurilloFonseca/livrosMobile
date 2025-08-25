@@ -12,8 +12,8 @@ export default function LivroComponente({ livro }: { livro: Book }) {
 
   const saveBook = () => {
     const { nome, desc, pagesTotal, autor, ano, img } = livro
-    for(let book of readBooks){
-      if(book.nome === nome){
+    for (let book of readBooks) {
+      if (book.nome === nome) {
         readBooks.splice(readBooks.indexOf(book))
         break;
       }
@@ -42,9 +42,9 @@ export default function LivroComponente({ livro }: { livro: Book }) {
               <Text style={styles.addButtonText}>Adicionar Progresso</Text>
             </TouchableOpacity>
           </View>
-          )} />
+        )} />
 
-        
+
 
         {displayStyle && (
           <View style={styles.progressContainer}>
