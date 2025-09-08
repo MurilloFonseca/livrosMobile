@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { StyleSheet, SafeAreaView, TextInput, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-export default function SearchBar({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
+export default function SearchBar({ navigation }: { navigation: NativeStackNavigationProp<any, any> }) {
   const [search, setSearch] = useState('')
 
   const searchBooks = (search: string) => {
-    for(let book of books){
-      if(book.nome === search){
-        navigation.navigate('searchResults', {livros: [book]})
+    for (let book of books) {
+      if (book.nome === search) {
+        navigation.navigate('searchResults', { livros: [book] })
         return;
       }
     }
@@ -18,8 +18,8 @@ export default function SearchBar({navigation}: {navigation: NativeStackNavigati
   }
 
   return (
-    <SafeAreaView style={{display: 'flex', flexDirection: 'row'}}>
-      <TextInput style={styles.input} placeholder='Pesquisar Livro' value={search} onChangeText={setSearch}/>
+    <SafeAreaView style={{ display: 'flex', flexDirection: 'row' }}>
+      <TextInput style={styles.input} placeholder='Pesquisar Livro' value={search} onChangeText={setSearch} />
       <TouchableOpacity style={styles.saveButton} onPress={() => searchBooks(search)}>
         <Text style={styles.saveButtonText}>Pesquisar</Text>
       </TouchableOpacity>

@@ -5,21 +5,21 @@ import { profilePicture } from '@/constants/Images';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 
-export default function Header({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
+export default function Header({ navigation }: { navigation: NativeStackNavigationProp<any, any> }) {
   return (
     <SafeAreaView style={styles.header}>
       <TouchableOpacity onPress={() => navigation.navigate('main')}>
         <Text style={styles.return}>&lt;-</Text>
       </TouchableOpacity>
-      <SearchBar navigation={navigation}/>
-      <UserPicture src={profilePicture}/>
+      <SearchBar navigation={navigation} />
+      <UserPicture src={profilePicture} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'

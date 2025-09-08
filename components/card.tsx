@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
-import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import React from 'react';
 
-export default function Paragraph({ content }: { content: ReactElement }) {
+export default function Card({ content }: { content: ReactElement }) {
   return (
     <SafeAreaView style={styles.card}>
       <View style={styles.infoContainer}>

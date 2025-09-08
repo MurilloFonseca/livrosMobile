@@ -1,25 +1,22 @@
-import { StyleSheet, SafeAreaView, Text, FlatList, View } from 'react-native';
+import { SafeAreaView, View, StyleSheet, Text } from "react-native";
+import React from 'react'
 import SearchBar from './searchBar';
-import UserPicture from './userPicture';
 import { profilePicture } from '@/constants/Images';
-import LivroLido from './livroLido';
-import { readBooks } from '@/constants/ReadBooks';
+import UserPicture from './userPicture';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React from 'react';
 
-export default function MainComponente({navigation}: {navigation: NativeStackNavigationProp<any, any>}) {
+export default function MainHeader({ navigation }: { navigation: NativeStackNavigationProp<any, any> }) {
   return (
     <SafeAreaView style={styles.infoContainer}>
       <View style={styles.mainHeader}>
         <Text style={styles.title}>&lt;NAME&gt;</Text>
-        <SearchBar navigation={navigation}/>
+        <SearchBar navigation={navigation} />
         <UserPicture src={profilePicture} />
       </View>
-      <Text style={styles.livroAutor}>Seus Livros</Text>
-      <FlatList data={readBooks} renderItem={({item}) => <LivroLido navigation={navigation} livro={item}/>}/>
     </SafeAreaView>
-  );
+  )
 }
+
 
 const styles = StyleSheet.create({
   title: {
@@ -35,11 +32,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: 50,
-  },
-  livroAutor: {
-    fontSize: 16,
-    color: '#555',
-    paddingBottom: 20,
-    paddingLeft: 20,
   },
 });

@@ -1,14 +1,23 @@
-import { Image, StyleSheet, SafeAreaView, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
-import Paragraph from './paragraph';
+import { Image, StyleSheet, SafeAreaView, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import Paragraph from './card';
 import { useState } from 'react';
 import { Book } from '@/constants/Types';
 import { readBooks } from '@/constants/ReadBooks';
 import React from 'react';
+import LivroImg from './livroImg';
 
-export default function LivroComponente({ livro }: { livro: Book }) {
-
+export default function LivroInfo({ livro }: { livro: Book }) {
   const [displayStyle, setDisplayStyle] = useState(false);
   const [numberPages, setNumberPages] = useState('0')
+
+  const content = (
+    <View>
+      <text>{livro.desc}</text>
+      <TouchableOpacity style={styles.addButton} onPress={() => setDisplayStyle(!displayStyle)}>
+        <Text style={styles.addButtonText}>Adicionar Progresso</Text>
+      </TouchableOpacity>
+    </View>
+  )
 
   const saveBook = () => {
     const { nome, desc, pagesTotal, autor, ano, img } = livro
@@ -22,63 +31,39 @@ export default function LivroComponente({ livro }: { livro: Book }) {
   }
 
   return (
-    <SafeAreaView>
-      <View style={styles.infoContainer}>
-        <View style={styles.imageContainer}>
-          <Image style={styles.livroImg} source={{ uri: livro.img }} />
-        </View>
-
-        <Text style={styles.livroNome}>{livro.nome}</Text>
-
-        <View style={styles.autorAnoContainer}>
-          <Text style={styles.livroAutor}>{livro.autor}</Text>
-          <Text style={styles.livroAno}>{livro.ano}</Text>
-        </View>
-
-        <Paragraph content={(
-          <View>
-            <text>{livro.desc}</text>
-            <TouchableOpacity style={styles.addButton} onPress={() => setDisplayStyle(!displayStyle)}>
-              <Text style={styles.addButtonText}>Adicionar Progresso</Text>
-            </TouchableOpacity>
-          </View>
-        )} />
-
-
-
-        {displayStyle && (
-          <View style={styles.progressContainer}>
-            <TextInput
-              style={styles.input}
-              value={numberPages}
-              onChangeText={setNumberPages}
-              keyboardType="numeric"
-            />
-            <Text style={styles.progressText}>/ {livro.pagesTotal} páginas</Text>
-            <TouchableOpacity style={styles.saveButton} onPress={saveBook}>
-              <Text style={styles.saveButtonText}>Salvar</Text>
-            </TouchableOpacity>
-          </View>
-        )}
+    <SafeAreaView style={styles.infoContainer}>
+      <View style={styles.imageContainer}>
+        <LivroImg src={livro.img}></LivroImg>
       </View>
+
+      <Text style={styles.livroNome}>{livro.nome}</Text>
+
+      <View style={styles.autorAnoContainer}>
+        <Text style={styles.livroAutor}>{livro.autor}</Text>
+        <Text style={styles.livroAno}>{livro.ano}</Text>
+      </View>
+
+      <Paragraph content={content} />
+
+      {displayStyle && (
+        <View style={styles.progressContainer}>
+          <TextInput
+            style={styles.input}
+            value={numberPages}
+            onChangeText={setNumberPages}
+            keyboardType="numeric"
+          />
+          <Text style={styles.progressText}>/ {livro.pagesTotal} páginas</Text>
+          <TouchableOpacity style={styles.saveButton} onPress={saveBook}>
+            <Text style={styles.saveButtonText}>Salvar</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
-}
+} 
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    overflow: 'hidden',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 5,
-    marginBottom: 40,
-    width: '90%',
-    alignSelf: 'center',
-  },
   infoContainer: {
     padding: 16,
   },
@@ -86,19 +71,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 0,
     marginBottom: 16,
-  },
-  livroImg: {
-    width: 120,
-    height: 180,
-    borderRadius: 12,
-    resizeMode: 'cover',
-    borderWidth: 2,
-    borderColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 6,
-    elevation: 6,
   },
   livroNome: {
     fontSize: 24,
