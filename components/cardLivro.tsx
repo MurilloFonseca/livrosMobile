@@ -1,6 +1,6 @@
 import { Book } from '@/constants/Types';
 import { StyleSheet, SafeAreaView, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
-import Paragraph from './card';
+import Card from './card';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import LivroImg from './livroImg';
@@ -20,7 +20,7 @@ export default function CardLivro({ livro, navigation }: { navigation: NativeSta
   return (
     <SafeAreaView>
       <TouchableOpacity onPress={() => navigation.navigate('book', { livro: livro })}>
-        <Paragraph content={content} />
+        <Card content={content} />
       </TouchableOpacity>
     </SafeAreaView>
   );

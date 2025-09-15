@@ -11,7 +11,7 @@ export default function HomeScreen() {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="main" component={MainTab} />
+      <Stack.Screen name="index" component={MainTab} />
       <Stack.Screen name="book" component={LivroTab} initialParams={{ livro: books[0] }} />
       <Stack.Screen name="searchResults" component={SearchTab} initialParams={{ livros: books }} />
     </Stack.Navigator>

@@ -8,7 +8,7 @@ import React from 'react';
 export default function Header({ navigation }: { navigation: NativeStackNavigationProp<any, any> }) {
   return (
     <SafeAreaView style={styles.header}>
-      <TouchableOpacity onPress={() => navigation.navigate('main')}>
+      <TouchableOpacity onPress={() => navigation.navigate('index')}>
         <Text style={styles.return}>&lt;-</Text>
       </TouchableOpacity>
       <SearchBar navigation={navigation} />

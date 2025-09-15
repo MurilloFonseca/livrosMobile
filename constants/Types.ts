@@ -9,7 +9,7 @@ export type Book = {
 }
 
 export type StackParams = {
-  main: undefined;
+  index: undefined;
   book: {livro: Book};
   searchResults: {livros: Book[]};
 }

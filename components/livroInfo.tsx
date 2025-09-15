@@ -1,10 +1,10 @@
-import { Image, StyleSheet, SafeAreaView, Text, View, TextInput, TouchableOpacity } from 'react-native';
-import Paragraph from './card';
+import { StyleSheet, SafeAreaView, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { Book } from '@/constants/Types';
 import { readBooks } from '@/constants/ReadBooks';
 import React from 'react';
 import LivroImg from './livroImg';
+import Card from './card';
 
 export default function LivroInfo({ livro }: { livro: Book }) {
   const [displayStyle, setDisplayStyle] = useState(false);
@@ -43,7 +43,7 @@ export default function LivroInfo({ livro }: { livro: Book }) {
         <Text style={styles.livroAno}>{livro.ano}</Text>
       </View>
 
-      <Paragraph content={content} />
+      <Card content={content} />
 
       {displayStyle && (
         <View style={styles.progressContainer}>

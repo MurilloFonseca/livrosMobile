@@ -18,10 +18,4 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
-  livroAutor: {
-    fontSize: 16,
-    color: '#555',
-    paddingBottom: 20,
-    paddingLeft: 20,
-  },
 });
