@@ -5,6 +5,7 @@ import { readBooks } from '@/constants/ReadBooks';
 import React from 'react';
 import LivroImg from './livroImg';
 import Card from './card';
+import { WebView } from 'react-native-webview'
 
 export default function LivroInfo({ livro }: { livro: Book }) {
   const [displayStyle, setDisplayStyle] = useState(false);
@@ -20,19 +21,19 @@ export default function LivroInfo({ livro }: { livro: Book }) {
   )
 
   const saveBook = () => {
-    const { nome, desc, pagesTotal, autor, ano, img } = livro
+    const { nome, desc, pagesTotal, autor, ano, img, link } = livro
     for (let book of readBooks) {
       if (book.nome === nome) {
         readBooks.splice(readBooks.indexOf(book))
         break;
       }
     }
-    readBooks.push({ nome, desc, pagesTotal, autor, ano, pagesRead: numberPages, img })
+    readBooks.push({ nome, desc, pagesTotal, autor, ano, pagesRead: numberPages, img, link })
   }
 
   return (
     <SafeAreaView style={styles.infoContainer}>
-      <View style={styles.imageContainer}>
+      {/* <View style={styles.imageContainer}>
         <LivroImg src={livro.img}></LivroImg>
       </View>
 
@@ -58,10 +59,15 @@ export default function LivroInfo({ livro }: { livro: Book }) {
             <Text style={styles.saveButtonText}>Salvar</Text>
           </TouchableOpacity>
         </View>
-      )}
+      )} */}
+      <WebView 
+        source={{ uri: livro.link }} 
+        style={{ flex: 1, width: '100%', height: 3700 }}
+      >
+      </WebView>
     </SafeAreaView>
   );
-} 
+}
 
 const styles = StyleSheet.create({
   infoContainer: {

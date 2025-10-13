@@ -9,9 +9,11 @@ export default function MainHeader({ navigation }: { navigation: NativeStackNavi
   return (
     <SafeAreaView style={styles.infoContainer}>
       <View style={styles.mainHeader}>
-        <Text style={styles.title}>&lt;NAME&gt;</Text>
+        <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', width: '150%'}}>
+          <Text style={styles.title}>&lt;NAME&gt;</Text>
+          <UserPicture src={profilePicture} />
+        </View>
         <SearchBar navigation={navigation} />
-        <UserPicture src={profilePicture} />
       </View>
     </SafeAreaView>
   )
@@ -28,9 +30,10 @@ const styles = StyleSheet.create({
   },
   mainHeader: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: 50,
+    gap: 40
   },
 });

@@ -5,7 +5,8 @@ export type Book = {
     ano: string, 
     img: string,
     pagesTotal: string,
-    pagesRead?: string
+    pagesRead?: string,
+    link: string
 }
 
 export type StackParams = {

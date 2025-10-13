@@ -4,7 +4,6 @@ import { readBooks } from '@/constants/ReadBooks';
 import CardLivro from './cardLivro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-
 export default function LivrosLidos({ navigation }: { navigation: NativeStackNavigationProp<any, any> }) {
   return (
     <SafeAreaView>
